@@ -5,7 +5,7 @@ Pure swiftUI.
 
 ## Requirements
 
-1. Using pixabay API (https://punkapi.com/documentation/v2)
+1. Using punkapi.com API (https://punkapi.com/documentation/v2)
 
 ## Usage
 
