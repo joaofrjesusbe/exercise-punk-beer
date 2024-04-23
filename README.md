@@ -12,3 +12,9 @@ Pure swiftUI.
 1. Checkout code
 2. Run
 
+## Improvements
+
+1. Simplify repository and make it reactive
+2. Improve coordinator and view creation
+3. Implement beer detail refresh
+4. Create tests

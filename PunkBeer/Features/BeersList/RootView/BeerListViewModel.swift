@@ -13,6 +13,7 @@ final class BeerListViewModel {
     @MainActor
     func loadImages() async {
         state = .loading
+        paginationState = .idle
         do {
             let items = try await action().map(BeerPreviewUI.init)
             state = .didLoad(items)
