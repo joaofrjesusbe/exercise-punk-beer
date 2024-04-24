@@ -25,7 +25,6 @@ struct BeerDetailView: View {
                 EmptyView()
             }
         }
-        .background(Color(.systemGray6))
         .padding(8)
     }
 }
