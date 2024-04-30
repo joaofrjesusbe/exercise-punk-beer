@@ -1,7 +1,18 @@
-import Foundation
+import Combine
 
-protocol BeerListService: ListingService
-where Query == String, Item == Beer, Metadata == Void { }
+typealias BeerListing = Listing<Beer, Void>
 
-protocol BeerListRepository: ListingRepository
-where Service: BeerListService { }
+protocol BeerListRepository {
+
+    var listing: AnyPublisher<BeerListing, Never> { get }
+
+    var selectedBeer: Beer? { get set }
+
+    func reset()
+
+    func shouldLoadNextPage(index: Int) -> Bool
+
+    func loadNextPage()
+
+    func update(beer: Beer)
+}

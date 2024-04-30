@@ -3,10 +3,10 @@ import SwiftUI
 @Observable
 final class BeerDetailViewModel {
     private(set) var state: ViewState<Beer> = .loading
-    private let action: GetBeerAction
+    private let repo: any BeerListRepository
 
-    init(action: GetBeerAction) {
-        self.action = action
+    init(repo: any BeerListRepository) {
+        self.repo = repo
     }
 
     @MainActor

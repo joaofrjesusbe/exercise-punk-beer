@@ -35,6 +35,26 @@ struct Listing<Item, Metadata> {
         listing.items.append(contentsOf: page.items)
         return listing
     }
+
+    func replaceItem(at index: Int, with item: Item) -> Listing {
+        var listing = self
+        listing.items[index] = item
+        return listing
+    }
+}
+
+extension Listing where Item: Identifiable {
+
+    func index(of item: Item) -> Int? {
+        items.firstIndex { $0.id == item.id }
+    }
+
+    func replaceItem(_ item: Item) -> Listing {
+        guard let index = index(of: item) else {
+            return self
+        }
+        return replaceItem(at: index, with: item)
+    }
 }
 
 extension Listing {

@@ -9,13 +9,13 @@ final class BeerListMockService: BeerListService {
         self.defaultPageSize = defaultPageSize
     }
 
-    func requestPage(query: String, page: Int) async throws -> ListingPage<Beer, Void> {
+    func requestPage(page: Int) async throws -> ListingPage<Beer, Void> {
         do {
             let data = try await getData(from: filename)
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             let beers = try decoder.decode([Beer].self, from: data)
-            var page = AssociatedListingPage(pageNumber: page, items: beers)
+            var page = ListingPage<Beer, Void>(pageNumber: page, items: beers)
             page.hasNextPage = beers.count == defaultPageSize
             return page
 

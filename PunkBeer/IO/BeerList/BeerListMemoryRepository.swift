@@ -1,4 +1,25 @@
-import Foundation
+import Combine
+import SwiftUI
 
-final class BeerListMemoryRepository<Service: BeerListService>:
-    ListingMemoryRepository<Service>, BeerListRepository { }
+@Observable
+final class BeerListMemoryRepository: BeerListRepository {
+    var listing: AnyPublisher<BeerListing, Never>
+    
+    func update(beer: Beer) {
+        
+    }
+    
+
+    
+    func replace(beer: Beer) {
+        
+    }
+
+    func shouldLoadNextPage(index: Int) -> Bool {
+        false
+    }
+
+    func loadNextPage() {
+
+    }
+}

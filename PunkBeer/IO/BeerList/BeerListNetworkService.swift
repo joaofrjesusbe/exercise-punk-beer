@@ -9,8 +9,8 @@ final class BeerListNetworkService: BeerListService {
         self.defaultPageSize = defaultPageSize
     }
 
-    func requestPage(query: String, page: Int) async throws -> ListingPage<Beer, Void> {
-        guard let url = PunkEndpoint.search(query: query, page: page, perPage: defaultPageSize).url else {
+    func requestPage(page: Int) async throws -> ListingPage<Beer, Void> {
+        guard let url = PunkEndpoint.search(query: "", page: page, perPage: defaultPageSize).url else {
             throw NetworkError.urlMalform
         }
 
@@ -19,7 +19,7 @@ final class BeerListNetworkService: BeerListService {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             let beers = try decoder.decode([Beer].self, from: data)
-            var page = AssociatedListingPage(pageNumber: page, items: beers)
+            var page = ListingPage<Beer, Void>(pageNumber: page, items: beers)
             page.hasNextPage = beers.count == defaultPageSize
             return page
 
