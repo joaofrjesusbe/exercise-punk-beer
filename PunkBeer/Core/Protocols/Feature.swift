@@ -1,7 +1,7 @@
 import SwiftUI
 
 protocol Feature {
-    associatedtype RootView: View
+    associatedtype ViewModel
 
-    var rootView: RootView { get }
+    var viewModel: ViewModel { get }
 }

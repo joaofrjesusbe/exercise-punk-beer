@@ -33,7 +33,6 @@
 		EB0A5BE02BD7E4A1004FF2F7 /* BeerPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A5BD52BD7E4A1004FF2F7 /* BeerPreviewCell.swift */; };
 		EB0A5BE12BD7E4A1004FF2F7 /* BeerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A5BD62BD7E4A1004FF2F7 /* BeerListView.swift */; };
 		EB0A5BE22BD7E4A1004FF2F7 /* BeerListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A5BD82BD7E4A1004FF2F7 /* BeerListFeature.swift */; };
-		EB0A5BE32BD7E4A1004FF2F7 /* BeerListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A5BD92BD7E4A1004FF2F7 /* BeerListRouter.swift */; };
 		EB0A5BE42BD7E4A1004FF2F7 /* BeerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A5BDB2BD7E4A1004FF2F7 /* BeerDetailView.swift */; };
 		EB0A5BE62BD7EC39004FF2F7 /* BeerListMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A5BE52BD7EC39004FF2F7 /* BeerListMockService.swift */; };
 		EB0A5BE82BD7EC70004FF2F7 /* beerlist.json in Resources */ = {isa = PBXBuildFile; fileRef = EB0A5BE72BD7EC70004FF2F7 /* beerlist.json */; };
@@ -92,7 +91,6 @@
 		EB0A5BD52BD7E4A1004FF2F7 /* BeerPreviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerPreviewCell.swift; sourceTree = "<group>"; };
 		EB0A5BD62BD7E4A1004FF2F7 /* BeerListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerListView.swift; sourceTree = "<group>"; };
 		EB0A5BD82BD7E4A1004FF2F7 /* BeerListFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerListFeature.swift; sourceTree = "<group>"; };
-		EB0A5BD92BD7E4A1004FF2F7 /* BeerListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerListRouter.swift; sourceTree = "<group>"; };
 		EB0A5BDB2BD7E4A1004FF2F7 /* BeerDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerDetailView.swift; sourceTree = "<group>"; };
 		EB0A5BE52BD7EC39004FF2F7 /* BeerListMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListMockService.swift; sourceTree = "<group>"; };
 		EB0A5BE72BD7EC70004FF2F7 /* beerlist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beerlist.json; sourceTree = "<group>"; };
@@ -308,7 +306,6 @@
 			isa = PBXGroup;
 			children = (
 				EB0A5BD82BD7E4A1004FF2F7 /* BeerListFeature.swift */,
-				EB0A5BD92BD7E4A1004FF2F7 /* BeerListRouter.swift */,
 				EB0A5BD32BD7E4A1004FF2F7 /* RootView */,
 				EB0A5BD72BD7E4A1004FF2F7 /* View */,
 			);
@@ -507,7 +504,6 @@
 				EB0A5BBF2BD7E0B9004FF2F7 /* NetworkError.swift in Sources */,
 				EB0A5BEB2BD7F238004FF2F7 /* GetBeerAction.swift in Sources */,
 				EB0A5BF72BD7F681004FF2F7 /* BeerDetailRootView.swift in Sources */,
-				EB0A5BE32BD7E4A1004FF2F7 /* BeerListRouter.swift in Sources */,
 				EB0A5BEE2BD7F263004FF2F7 /* BeerListRepository.swift in Sources */,
 				EB0A5BDE2BD7E4A1004FF2F7 /* BeerListViewModel.swift in Sources */,
 				EB0A5BC82BD7E214004FF2F7 /* BeerListMemoryRepository.swift in Sources */,

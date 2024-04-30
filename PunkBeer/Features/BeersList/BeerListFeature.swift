@@ -2,19 +2,13 @@ import SwiftUI
 
 class BeerListFeature: Feature {
     let viewModel: BeerListViewModel
-    let router: BeerListRouter
 
-    init(repository: any BeerListRepository, router: BeerListRouter) {
-        self.router = router
+    init(repository: any BeerListRepository) {
         self.viewModel = Self.createViewModel(repository: repository)
 
         Task { @MainActor in
             await viewModel.loadImages()
         }
-    }
-
-    var rootView: some View {
-        BeerListRootView(viewModel: viewModel, router: router)
     }
 
     static func createViewModel(

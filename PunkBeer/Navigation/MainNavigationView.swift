@@ -5,9 +5,9 @@ struct MainNavigationView: View {
 
     var body: some View {
         NavigationStack(path: Bindable(coordinator).viewPath) {
-            coordinator.beerListFeature.rootView
+            BeerListRootView(viewModel: coordinator.beerListFeature.viewModel)
             .navigationDestination(for: BeerId.self) { beer in
-                coordinator.beerDetailFeature(beer).rootView
+                BeerDetailRootView(viewModel: coordinator.beerDetailFeature(beer).viewModel)
             }
         }
     }

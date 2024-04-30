@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct BeerListRootView: View {
-    let viewModel: BeerListViewModel
-    let router: BeerListRouter
+    @Environment(MainCoordinator.self) var coordinator
+    let viewModel: BeerListViewModel    
 
     var body: some View {
         ZStack(alignment: .center) {
@@ -21,7 +21,7 @@ struct BeerListRootView: View {
             BeerListView(
                 items: items,
                 onItemAppear: viewModel.itemDidAppear,
-                didSelect: router.openDetail
+                didSelect: coordinator.addValueToPath
             )
         case .failed:
             Text("Ups something went wrong")

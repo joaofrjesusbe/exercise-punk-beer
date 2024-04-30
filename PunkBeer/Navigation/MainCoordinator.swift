@@ -3,7 +3,16 @@ import SwiftUI
 @Observable
 class MainCoordinator {
     var viewPath = NavigationPath()
-    private var selectedDetail: BeerDetailFeature?
+    private var featurePaths: [any Feature] = []
+
+    func addValueToPath<Value: Hashable>(_ value: Value) {
+        viewPath.append(value)
+    }
+
+    func back() {
+        featurePaths.removeLast()
+        viewPath.removeLast()
+    }
 
     @ObservationIgnored
     private lazy var repository: any BeerListRepository = {
@@ -20,24 +29,16 @@ class MainCoordinator {
     @ObservationIgnored
     lazy var beerListFeature: BeerListFeature = {
         return BeerListFeature(
-            repository: repository,
-            router: .init(openDetail: { beer in
-                self.viewPath.append(beer)
-            })
+            repository: repository
         )
     }()
 
-    func beerDetailFeature(_ beerId: Int) -> BeerDetailFeature {
+    func beerDetailFeature(_ beerId: BeerId) -> BeerDetailFeature {
         let feature = BeerDetailFeature(
             beerId: beerId,
             repository: repository
         )
-        selectedDetail = feature
+        featurePaths.append(feature)
         return feature
-    }
-
-    func back() {
-        selectedDetail = nil
-        viewPath.removeLast()
     }
 }

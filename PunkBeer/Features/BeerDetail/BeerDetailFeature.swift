@@ -11,10 +11,6 @@ class BeerDetailFeature: Feature {
         }
     }
 
-    var rootView: some View {
-        BeerDetailRootView(viewModel: viewModel)
-    }
-
     static func createViewModel(
         beerId: BeerId,
         repository: any BeerListRepository
