@@ -1,3 +1,6 @@
+# Warning
+This repository is out of date and will be archived soon
+
 # exercise-punk-beer
 
 A small exercise about list - detail view.
